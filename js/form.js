@@ -43,7 +43,6 @@ this.BankCardForm = class BankCardForm {
         "X-Client-Ip": this.ip,
         "X-Visitor-Id": this.visitorId,
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http://localho.st"
       };
       data = {
         'id': '8',
