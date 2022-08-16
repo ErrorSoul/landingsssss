@@ -67,7 +67,7 @@ this.BankCardForm = class BankCardForm {
         type: 'POST',
         headers: headers,
         dataType: "json",
-        data: merge_data,
+        data: JSON.stringify(merge_data),
         error: function(jqXHR, textStatus, errorThrown) {
           return console.log(`AJAX Error: ${textStatus}`);
         },
