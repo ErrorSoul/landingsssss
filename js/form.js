@@ -34,7 +34,7 @@ this.BankCardForm = class BankCardForm {
 
   purchaseButtonHandler(e) {
     var data, headers, sign, merge_data;
-    //e.preventDefault();
+    e.preventDefault();
     e.stopPropagation();
     if (!this.ip || !this.visitorId) {
       alert("Something wrong!! Try again later");
