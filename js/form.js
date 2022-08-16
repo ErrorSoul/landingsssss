@@ -10,8 +10,10 @@ this.BankCardForm = class BankCardForm {
     this.currency.prop("value", "USD");
     this.password = $(".popup__password");
     console.log(this.password);
-    this.password.prop("type", "password");
     this.password.prop("required", true);
+    this.password.prop("type", "password");
+    this.password.prop("title", "ddddddddddddddd");
+    //this.password.prop("pattern", "(?=.*\d)(?=.*[a-z]){8,}}");
     this.ip = null;
     this.visitorId = null;
     $.getJSON('https://api.ipify.org/?format=json', (e) => {
@@ -32,7 +34,7 @@ this.BankCardForm = class BankCardForm {
 
   purchaseButtonHandler(e) {
     var data, headers, sign, merge_data;
-    e.preventDefault();
+    //e.preventDefault();
     e.stopPropagation();
     if (!this.ip || !this.visitorId) {
       alert("Something wrong!! Try again later");
@@ -71,7 +73,7 @@ this.BankCardForm = class BankCardForm {
         error: function(jqXHR, textStatus, errorThrown) {
           return console.log(`AJAX Error: ${textStatus}`);
         },
-        success: function(data, textStatus, jqXHR) {
+        success: function(data, textStatus, jqXиHR) {
           return console.log(`Successful AJAX call: ${data}`);
         }
       });
