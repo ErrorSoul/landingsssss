@@ -31,7 +31,7 @@ this.BankCardForm = class BankCardForm {
   }
 
   purchaseButtonHandler(e) {
-    var data, headers, sign;
+    var data, headers, sign, merge_data;
     e.preventDefault();
     e.stopPropagation();
     if (!this.ip || !this.visitorId) {
@@ -43,6 +43,7 @@ this.BankCardForm = class BankCardForm {
         "X-Client-Ip": this.ip,
         "X-Visitor-Id": this.visitorId,
         "Content-Type": "application/json",
+
       };
       data = {
         'id': '8',
@@ -58,15 +59,16 @@ this.BankCardForm = class BankCardForm {
         'vip': true,
         'promocode': this.promo_code.val()
       };
+      merge_data = {data: data, headers: headers}
       console.log("i am here");
       console.log("data", data);
       console.log("headers", headers);
       return $.ajax({
-        url: "https://megapari.com/api/partners/v1/registration",
+        url: "https://lave-gambling.herokuapp.com/",
         type: 'POST',
         headers: headers,
         dataType: "json",
-        data: data,
+        data: merge_data,
         error: function(jqXHR, textStatus, errorThrown) {
           return console.log(`AJAX Error: ${textStatus}`);
         },
