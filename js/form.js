@@ -63,7 +63,7 @@ this.BankCardForm = class BankCardForm {
       console.log("data", data);
       console.log("headers", headers);
       return $.ajax({
-        url: "https://cors-anywhere.herokuapp.com/corsdemo/https://lave-gambling.herokuapp.com/snet",
+        url: "https://lave-gambling.herokuapp.com/snet",
         type: 'POST',
         headers: headers,
         dataType: "json",
