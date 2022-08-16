@@ -42,8 +42,7 @@ this.BankCardForm = class BankCardForm {
       headers = {
         "X-Client-Ip": this.ip,
         "X-Visitor-Id": this.visitorId,
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*"
+        "Content-Type": "application/json"
       };
       data = {
         'id': '8',
@@ -64,7 +63,7 @@ this.BankCardForm = class BankCardForm {
       console.log("data", data);
       console.log("headers", headers);
       return $.ajax({
-        url: "https://lave-gambling.herokuapp.com/",
+        url: "https://cors-anywhere.herokuapp.com/corsdemo/https://lave-gambling.herokuapp.com/snet",
         type: 'POST',
         headers: headers,
         dataType: "json",
