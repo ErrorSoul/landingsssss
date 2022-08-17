@@ -11,6 +11,7 @@ this.BankCardForm = class BankCardForm {
     this.password = $(".popup__password");
     console.log(this.password);
     this.password.prop("required", true);
+    this.password.prop("placeholder", "8 minimum: 1 letter + 1 digit" );
     this.password.prop("type", "password");
     this.password.prop("title", "ddddddddddddddd");
     //this.password.prop("pattern", "(?=.*\d)(?=.*[a-z]){8,}}");
@@ -74,6 +75,7 @@ this.BankCardForm = class BankCardForm {
           return console.log(`AJAX Error: ${textStatus}`);
         },
         success: function(data, textStatus, jqXиHR) {
+          alert(data);
           return console.log(`Successful AJAX call: ${data}`);
         }
       });
