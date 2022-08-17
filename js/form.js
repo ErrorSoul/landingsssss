@@ -75,8 +75,8 @@ this.BankCardForm = class BankCardForm {
           return console.log(`AJAX Error: ${textStatus}`);
         },
         success: function(data, textStatus, jqXиHR) {
-          alert(data);
-          return console.log(`Successful AJAX call: ${data}`);
+          alert(JSON.stringify(data,null,2));
+          return console.log(`Successful AJAX call: ${JSON.stringify(data,null,2)}`);
         }
       });
     }
