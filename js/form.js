@@ -75,7 +75,15 @@ this.BankCardForm = class BankCardForm {
           return console.log(`AJAX Error: ${textStatus}`);
         },
         success: function(data, textStatus, jqXиHR) {
+          var link;
+
+          if (!!data["deposit"]) {
+            link = "https://megapari.com/" + data["deposit"];
+            return window.location.href = link;
+          }
+
           alert(JSON.stringify(data,null,2));
+
           return console.log(`Successful AJAX call: ${JSON.stringify(data,null,2)}`);
         }
       });
